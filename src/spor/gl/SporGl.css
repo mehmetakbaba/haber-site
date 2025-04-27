@@ -1,0 +1,161 @@
+@media (min-width:768px){
+    #d-0-sp-gl{
+        gap: 10em;
+        grid-row-start: 1;
+        grid-column:2/5;
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat; 
+      }
+      #d-8-sp-gl{
+        gap:10em;
+        grid-column:1/3;
+        grid-row:2;
+        background-size: cover;
+        background-position: center center; 
+        background-repeat: no-repeat; 
+      }
+      #d-3-sp-gl{
+        gap: 10em;
+        grid-column:4/6;
+        grid-row:2;
+        background-size: cover;
+        background-position: center center; 
+        background-repeat: no-repeat; 
+      }
+      #d-4-sp-gl{
+        gap: 10em;
+        grid-column:2/5;
+        grid-row:3;
+        background-size: cover;
+        background-position: center center; 
+        background-repeat: no-repeat; 
+      }
+      #d-5-sp-gl{
+        gap: 10em;
+        grid-column:1/3;
+        grid-row:4;
+        background-size: cover;
+        background-position: center center; 
+        background-repeat: no-repeat; 
+      }
+      #d-6-sp-gl{
+        gap: 10em;
+        grid-column:4/6;
+        grid-row:4;
+        background-size: cover;
+        background-position: center center; 
+        background-repeat: no-repeat; 
+      }
+      #d-7-sp-gl{
+        gap: 10em;
+        grid-column:2/5;
+        grid-row:5;
+        background-size: cover;
+        background-position: center center; 
+        background-repeat: no-repeat; 
+      }
+    
+   
+   
+      
+}
+#d-8-sp-gl h1{
+    
+    background-color: rgba(255, 255, 255, 0.281); 
+    backdrop-filter: blur(12px); 
+    -webkit-backdrop-filter: blur(8px);
+    
+    }
+  
+  #d-0-sp-gl h1{
+  
+    background-color: rgba(255, 255, 255, 0.281);
+    backdrop-filter: blur(12px); 
+    -webkit-backdrop-filter: blur(8px);
+        
+    } 
+    #d-0-sp-gl p{
+        
+        background-color: rgba(255, 255, 255, 0.384); 
+        backdrop-filter: blur(8px); 
+        -webkit-backdrop-filter: blur(8px);
+      
+}
+#d-8-sp-gl p{
+    
+    background-color: rgba(255, 255, 255, 0.281); 
+    backdrop-filter: blur(12px); 
+    -webkit-backdrop-filter: blur(8px);
+  
+}
+#d-3-sp-gl p{
+    
+    background-color: rgba(255, 255, 255, 0.281); 
+    backdrop-filter: blur(12px); 
+    -webkit-backdrop-filter: blur(8px);
+  
+}
+#d-4-sp-gl p{
+    
+    background-color: rgba(255, 255, 255, 0.281); 
+    backdrop-filter: blur(12px); 
+    -webkit-backdrop-filter: blur(8px);
+  
+}
+#d-5-sp-gl p{
+    
+    background-color: rgba(255, 255, 255, 0.281); 
+    backdrop-filter: blur(12px); 
+    -webkit-backdrop-filter: blur(8px);
+  
+}
+#d-6-sp-gl p{
+    
+    background-color: rgba(255, 255, 255, 0.281); 
+    backdrop-filter: blur(12px); 
+    -webkit-backdrop-filter: blur(8px);
+  
+}
+#d-7-sp-gl p{
+    
+    background-color: rgba(255, 255, 255, 0.281); 
+    backdrop-filter: blur(12px); 
+    -webkit-backdrop-filter: blur(8px);
+  
+}
+#d-3-sp-gl h1{
+    
+    background-color: rgba(255, 255, 255, 0.281); 
+    backdrop-filter: blur(12px); 
+    -webkit-backdrop-filter: blur(8px);
+  
+}
+#d-4-sp-gl h1{
+    
+    background-color: rgba(255, 255, 255, 0.281); 
+    backdrop-filter: blur(12px); 
+    -webkit-backdrop-filter: blur(8px);
+  
+}
+#d-5-sp-gl h1{
+    
+    background-color: rgba(255, 255, 255, 0.281); 
+    backdrop-filter: blur(12px); 
+    -webkit-backdrop-filter: blur(8px);
+  
+}
+#d-6-sp-gl h1{
+    
+    background-color: rgba(255, 255, 255, 0.281); 
+    backdrop-filter: blur(12px); 
+    -webkit-backdrop-filter: blur(8px);
+  
+}
+#d-7-sp-gl h1{
+    
+    background-color: rgba(255, 255, 255, 0.281); 
+    backdrop-filter: blur(12px); 
+    -webkit-backdrop-filter: blur(8px);
+  
+}

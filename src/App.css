@@ -1,0 +1,134 @@
+* {
+  background-color: #F4F1DE;
+  margin: 0;
+  
+  color: black;
+}
+
+.general-grid{
+  padding-top: 80px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  margin: 5px;
+  border: 3px solid black;
+  
+}
+
+.d{
+  padding: 5px;
+  margin: 10px 0px;
+  border-left: 1px solid rgb(2, 2, 2);  
+  border-right: 1px solid rgb(2, 2, 2);
+  
+  align-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+img{
+  width: 100%; 
+  height: auto; 
+  object-fit: cover; 
+}
+
+header{
+  width: 100vw;
+  text-align: center;
+  
+  border-bottom: 2px solid black;
+}
+.d:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease-in-out;
+}
+
+h1{
+  background-color: transparent;
+  text-align: center;
+}
+.button-div{
+  display: flex;
+  justify-content: space-around;
+}
+h3{
+  font-size: 1rem;
+  text-transform: none;
+}
+
+
+p{
+  background: transparent;
+  line-height: 1.4em;
+ 
+}
+.wide-div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 20%;
+
+} 
+
+.css-2soe65-MuiModal-root-MuiDrawer-root {
+  position: relative !important;
+  z-index: 1300;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  z-index: 1200;
+}
+.d p {
+  display: -webkit-box;
+  -webkit-line-clamp: 7;             /* Maksimum satır sayısı */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-clamp: 7;                     /* Standart olanı da ekliyoruz (uyum için) */
+  box-orient: vertical;             /* Standart olanı da ekliyoruz */
+}
+
+.css-1a5fs94 {
+
+  text-align: center;
+}
+
+
+@media only screen and (max-width: 768px) {
+  
+  .general-grid {
+  padding-top: 80px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  margin: 5px;
+  border: 3px solid black;
+  gap: 20px;
+  }
+  
+  .d {
+   
+    padding: 8px;
+    margin: 5px 0;
+  }
+}
+
+.skeleton-flex{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+  padding-top: 47px;
+}
+
+.skeleton{
+  gap:7px;
+  display: flex;
+  flex-direction: column;
+}
