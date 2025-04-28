@@ -3,11 +3,11 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 export const ApiSlice = createApi({
   reducerPath: 'newsApi',
-  baseQuery: fetchBaseQuery({ baseUrl: 'http://brapi-dev.eba-p88twaeg.eu-central-1.elasticbeanstalk.com/api' }), 
-  tagTypes: ['News'],
+  baseQuery: fetchBaseQuery({ baseUrl: 'https://pw63lzvyo7.execute-api.eu-central-1.amazonaws.com/default' }), 
+  tagTypes: ['addCustomer'],
   endpoints: (builder) => ({
     getNews: builder.query({
-      query: () => 'News', 
+      query: () => 'addCustomer', 
       providesTags: (result) =>
         result
           ? [...Object.keys(result).map((key) => ({ type: 'News', id: key })), { type: 'News', id: 'LIST' }]
