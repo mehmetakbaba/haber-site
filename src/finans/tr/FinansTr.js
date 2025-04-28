@@ -14,7 +14,7 @@ function FinansTr({ data, isLoading, error,isMobile }) {
             data.map((item, index) => {
              if(isMobile) {
                 
-                  if(item.imageUrl !== null){
+                  if(item.imageUrl !== null && !item.imageUrl.includes('donanimhaber')){
                       return(
                           <div key={`normal-${item.id}`} onClick={() => dispatch(setAll({title:item.title,description:item.description}))} className="d">
                               <img src={item.imageUrl} alt={item.title}></img>

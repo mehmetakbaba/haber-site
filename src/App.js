@@ -84,7 +84,9 @@ function App() {
 
   return (
     <div className='App'>
-      <header style={{ position: 'fixed', zIndex: 1 }}>
+      {!isMobile ? (
+        <>
+        <header style={{ position: 'fixed', zIndex: 1 }}>
         <h1>News Sway</h1>
         <div className='button-div'>
           <Button onClick={() => scrollToDivider(section1Ref)} disableRipple>
@@ -100,7 +102,49 @@ function App() {
           </Button>
           <h4 style={{ position: 'absolute', top: '10px', right: '10px', margin: 0 }}>  newsswayinfo@gmail.com </h4>
         </div>
-      </header>   
+      </header>   </>
+      ) : <>
+      <header style={{ 
+  position: 'fixed', 
+ 
+  width: '100%',
+  backgroundColor: 'white', // Add background color for readability
+ 
+}}>
+  <div style={{
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    padding: '0 10px'
+  }}>
+    <h1 style={{ fontSize: '1.5rem', margin: 0 }}>News Sway</h1>
+    <h4 style={{ margin: 0, fontSize: '0.8rem' }}>newsswayinfo@gmail.com</h4>
+  </div>
+  
+  <div className='button-div' style={{
+    display: 'flex',
+    overflowX: 'auto',
+    height:'100%',
+    gap: '10px',
+    whiteSpace: 'nowrap',
+    scrollbarWidth: 'none' // For Firefox
+  }}>
+    <Button onClick={() => scrollToDivider(section1Ref)} disableRipple style={{ minWidth: 'unset' }}>
+      <h3 id='politikaH3' style={{ fontSize: '1rem', margin: 0 }}>Gündem</h3>
+    </Button>
+    <h3 id='trHeader' style={{ fontSize: '1rem', margin: 0 }}>Türkiye</h3>
+    <Button onClick={() => scrollToDivider(section3Ref)} disableRipple style={{ minWidth: 'unset' }}>
+      <h3 id='finansH3' style={{ fontSize: '1rem', margin: 0 }}>Finans</h3>
+    </Button>
+    <h3 id='glHeader' style={{ fontSize: '1rem', margin: 0 }}>Dünya</h3>
+    <Button onClick={() => scrollToDivider(section5Ref)} disableRipple style={{ minWidth: 'unset' }}>
+      <h3 id='sporH3' style={{ fontSize: '1rem', margin: 0 }}>Spor</h3>
+    </Button>
+  </div>
+</header>
+
+      
+      </>}
 
       {isLoading ? (
         <>
