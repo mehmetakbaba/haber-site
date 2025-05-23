@@ -1,14 +1,9 @@
-* {
-  background-color: #F4F1DE;
-  margin: 0;
-  
-  color: black;
-}
+
 
 .general-grid{
-  padding-top: 80px;
+  padding-top: 90px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: auto;
   margin: 5px;
   border: 3px solid black;
@@ -35,12 +30,13 @@ img{
 header{
   width: 100vw;
   text-align: center;
-  
+z-index: 1000;  
   border-bottom: 2px solid black;
 }
 .d:hover {
   transform: scale(1.02);
   transition: transform 0.3s ease-in-out;
+  
 }
 
 h1{
@@ -54,6 +50,7 @@ h1{
 h3{
   font-size: 1rem;
   text-transform: none;
+  font-weight: bold;
 }
 
 
@@ -82,12 +79,12 @@ p{
 }
 .d p {
   display: -webkit-box;
-  -webkit-line-clamp: 7;             /* Maksimum satır sayısı */
+  -webkit-line-clamp: 7;             
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
-  line-clamp: 7;                     /* Standart olanı da ekliyoruz (uyum için) */
-  box-orient: vertical;             /* Standart olanı da ekliyoruz */
+  line-clamp: 7;                     
+  box-orient: vertical;            
 }
 
 .css-1a5fs94 {
@@ -97,7 +94,12 @@ p{
 
 
 @media only screen and (max-width: 768px) {
-  
+  p{
+    color: black;
+  }
+  h3{
+    color: black;
+  }
   .general-grid {
   padding-top: 80px;
   display: grid;
@@ -131,4 +133,18 @@ p{
   gap:7px;
   display: flex;
   flex-direction: column;
+}
+#dropdown-item-button,.dropdown-item:hover{
+background: transparent;
+color: black;
+border-color: transparent;
+font-weight: bold;
+}
+
+.dropdown-menu ,.dropdown-item:active{
+  background: #F4F1DE;
+  color: black;
+  border-color: transparent;
+  font-weight: bold;
+  
 }

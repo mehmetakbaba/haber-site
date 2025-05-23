@@ -1,13 +1,10 @@
 // Politika
-import PolitikaTr from './politika/tr/PolitikaTr.js';
-import PolitikaGl from './politika/gl/PolitikaGl.js';
-
-// Finans
-import FinansTr from './finans/tr/FinansTr.js';
-import FinansGl from './finans/gl/FinansGl.js';
+import General from "./Categories/General";
+import Finance from "./Categories/Finance";
+import Sport from "./Categories/Sport";
 
 // Diğer importlar
 import { LoremIpsum } from "lorem-ipsum";
-import { Button, Divider } from '@mui/material';
+import { Divider } from '@mui/material';
 
-export { PolitikaTr, PolitikaGl, FinansTr, FinansGl, LoremIpsum, Button, Divider };
+export { General, Finance, Sport, LoremIpsum, Divider };

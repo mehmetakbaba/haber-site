@@ -1,11 +1,14 @@
 import './App.css';
-import React, { useEffect, useRef, useState } from 'react';
-import { PolitikaTr, PolitikaGl, FinansTr, FinansGl, Button, Divider } from './imports';
-import SporTr from './spor/tr/SporTr';
-import SporGl from './spor/gl/SporGl';
+import React, { use, useEffect, useRef, useState } from 'react';
+import { General, Finance,Sport, Divider } from './imports';
+import { Button } from '@mui/material';
+import { languages } from "./languages";
+import { useSelector } from 'react-redux';
+import { getSelectCountry } from './slice/SelectSlice';
 import BottomDrawer from './BottomDrawer';
-import { useGetNewsQuery } from './ApiSlice';
+import  useSelectCountry  from './SelectCountry';
 import CustomSkeleton from './CustomSkeleton';
+import CountryButton from './CountryButton';
 
 function App() {
   const [isMobile, setIsMobile] = useState(false);
@@ -13,11 +16,12 @@ function App() {
   const section1Ref = useRef(null);
   const section2Ref = useRef(null);
   const section3Ref = useRef(null);
-  const section4Ref = useRef(null);
-  const section5Ref = useRef(null);
-  const section6Ref = useRef(null);
+  const stateLangue = useSelector(getSelectCountry);
 
-  const { data, isLoading, error } = useGetNewsQuery();
+  const { data, isLoading, error } = useSelectCountry();
+const {general, sport, finance, header, dropdown} = languages[stateLangue];
+
+
 
   const scrollToDivider = (section) => {
     if (section.current) {
@@ -27,6 +31,7 @@ function App() {
       });
     }
   };
+  console.log('data', data);
 
   useEffect(() => {
     const handleResize = () => {
@@ -40,7 +45,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    const buttonIds = ['trHeader', 'glHeader', 'politikaH3', 'finansH3', 'sporH3'];
+    const buttonIds = ['politikaH3','finansH3', 'sporH3'];
 
     const handleScroll = () => {
       buttonIds.forEach(id => {
@@ -52,26 +57,20 @@ function App() {
 
       const scrollY = window.scrollY || document.documentElement.scrollTop;
 
-      if (section2Ref.current) {
+      if (section1Ref.current) {
         if (scrollY < section2Ref.current.offsetTop - 100) {
           document.getElementById('politikaH3').style.fontSize = '2rem';
-          document.getElementById('trHeader').style.fontSize = '1.5rem';
-        } else if (scrollY >= section2Ref.current.offsetTop - 100 && scrollY < section3Ref.current?.offsetTop - 100) {
-          document.getElementById('politikaH3').style.fontSize = '2rem';
-          document.getElementById('glHeader').style.fontSize = '1.5rem';
-        } else if (scrollY >= section3Ref.current?.offsetTop - 100 && scrollY < section4Ref.current?.offsetTop - 100) {
+        
+        } 
+        
+         else if (scrollY >= section2Ref.current?.offsetTop - 100 && scrollY < section3Ref.current?.offsetTop - 100) {
           document.getElementById('finansH3').style.fontSize = '2rem';
-          document.getElementById('trHeader').style.fontSize = '1.5rem';
-        } else if (scrollY >= section4Ref.current?.offsetTop - 100 && scrollY < section5Ref.current?.offsetTop - 100) {
-          document.getElementById('finansH3').style.fontSize = '2rem';
-          document.getElementById('glHeader').style.fontSize = '1.5rem';
-        } else if (scrollY >= section5Ref.current?.offsetTop - 100 && scrollY < section6Ref.current?.offsetTop - 100) {
+      
+        
+        } else if (scrollY >= section3Ref.current?.offsetTop - 100) {
           document.getElementById('sporH3').style.fontSize = '2rem';
-          document.getElementById('trHeader').style.fontSize = '1.5rem';
-        } else {
-          document.getElementById('sporH3').style.fontSize = '2rem';
-          document.getElementById('glHeader').style.fontSize = '1.5rem';
-        }
+          
+        } 
       }
     };
 
@@ -88,18 +87,24 @@ function App() {
         <>
         <header style={{ position: 'fixed', zIndex: 1 }}>
         <h1>News Sway</h1>
+       
         <div className='button-div'>
-          <Button onClick={() => scrollToDivider(section1Ref)} disableRipple>
-            <h3 id='politikaH3'>Gündem</h3>
+          <Button sx={{backgroundColor: 'transparent', 
+                      color: 'black',}}  onClick={() => scrollToDivider(section1Ref)} disableRipple>
+            <h3 style={{fontSize : '2rem'}} id='politikaH3'>{general}</h3>
           </Button>
-          <h3 id='trHeader'>Türkiye</h3>
-          <Button onClick={() => scrollToDivider(section3Ref)} disableRipple>
-            <h3 id='finansH3'>Finans</h3>
+          <Button sx={{backgroundColor: 'transparent', 
+                      color: 'black',}} onClick={() => scrollToDivider(section2Ref)} disableRipple>
+            <h3 id='finansH3'>{finance}</h3>
           </Button>
-          <h3 id='glHeader'>Dünya</h3>
-          <Button onClick={() => scrollToDivider(section5Ref)} disableRipple>
-            <h3 id='sporH3'>Spor</h3>
+          <Button sx={{backgroundColor: 'transparent', 
+                      color: 'black',}} onClick={() => scrollToDivider(section3Ref)} disableRipple>
+            <h3 id='sporH3'>{sport}</h3>
           </Button>
+          <CountryButton  {...dropdown}>
+            <h3 id='country'>{header}</h3>
+          </CountryButton>
+           
           <h4 style={{ position: 'absolute', top: '10px', right: '10px', margin: 0 }}>  newsswayinfo@gmail.com </h4>
         </div>
       </header>   </>
@@ -108,7 +113,7 @@ function App() {
   position: 'fixed', 
  
   width: '100%',
-  backgroundColor: 'white', // Add background color for readability
+  backgroundColor: 'white', 
  
 }}>
   <div style={{
@@ -127,17 +132,17 @@ function App() {
     height:'100%',
     gap: '10px',
     whiteSpace: 'nowrap',
-    scrollbarWidth: 'none' // For Firefox
+    scrollbarWidth: 'none' 
   }}>
     <Button onClick={() => scrollToDivider(section1Ref)} disableRipple style={{ minWidth: 'unset' }}>
-      <h3 id='politikaH3' style={{ fontSize: '1rem', margin: 0 }}>Gündem</h3>
+      <h3 id='politikaH3' style={{ fontSize: '1rem', margin: 0 }}>{general}</h3>
     </Button>
-    <h3 id='trHeader' style={{ fontSize: '1rem', margin: 0 }}>Türkiye</h3>
-    <Button onClick={() => scrollToDivider(section3Ref)} disableRipple style={{ minWidth: 'unset' }}>
+    <h3 id='trHeader' style={{ fontSize: '1rem', margin: 0 }}>{header}</h3>
+    <Button onClick={() => scrollToDivider(section2Ref)} disableRipple style={{ minWidth: 'unset' }}>
       <h3 id='finansH3' style={{ fontSize: '1rem', margin: 0 }}>Finans</h3>
     </Button>
     <h3 id='glHeader' style={{ fontSize: '1rem', margin: 0 }}>Dünya</h3>
-    <Button onClick={() => scrollToDivider(section5Ref)} disableRipple style={{ minWidth: 'unset' }}>
+    <Button onClick={() => scrollToDivider(section3Ref)} disableRipple style={{ minWidth: 'unset' }}>
       <h3 id='sporH3' style={{ fontSize: '1rem', margin: 0 }}>Spor</h3>
     </Button>
   </div>
@@ -159,53 +164,38 @@ function App() {
         </>
       ) : (
         <>
+       
           <Divider ref={section1Ref} />
-          <PolitikaTr 
-            data={data?.data?.PolitikaTr || []}
+          <General 
+            data={data?.Genel || []}
             isLoading={isLoading}
             error={error}
             isMobile={isMobile}
           />
 
           <Divider ref={section2Ref} />
-          <PolitikaGl 
-            data={data?.data?.PolitikaGl || []}
+          
+
+         
+          <Finance 
+            data={data?.Finans || []}
+            isLoading={isLoading}
+            error={error}
+            isMobile={isMobile}
+          />
+          
+          
+
+           <Divider ref={section3Ref} />
+          <Sport 
+            data={data?.Spor || []}
             isLoading={isLoading}
             error={error}
             isMobile={isMobile}
           />
 
-          <Divider ref={section3Ref} />
-          <FinansTr 
-            data={data?.data?.FinansTr || []}
-            isLoading={isLoading}
-            error={error}
-            isMobile={isMobile}
-          />
-
-          <Divider ref={section4Ref} />
-          <FinansGl 
-            data={data?.data?.FinansGl || []}
-            isLoading={isLoading}
-            error={error}
-            isMobile={isMobile}
-          />
-
-          <Divider ref={section5Ref} />
-          <SporTr 
-            data={data?.data?.SporTr || []}
-            isLoading={isLoading}
-            error={error}
-            isMobile={isMobile}
-          />
-
-          <Divider ref={section6Ref} />
-          <SporGl 
-            data={data?.data?.SporGl || []}
-            isLoading={isLoading}
-            error={error}
-            isMobile={isMobile}
-          />
+         
+          
         </>
       )}
 

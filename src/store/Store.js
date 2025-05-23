@@ -1,14 +1,19 @@
 import { configureStore } from '@reduxjs/toolkit';
 import wideScreenSlice from '../WideScreenSlider';
-import { ApiSlice } from '../ApiSlice';
+import { USAApiSlice } from '../slice/USASlice';
+import  selectSlice  from '../slice/SelectSlice';
+import { TRSlice } from '../slice/TRSlice';
+import { FRSlice } from '../slice/FRSlice';
 export const store = configureStore({
-    reducer: {
-      [ApiSlice.reducerPath]: ApiSlice.reducer,
-      WideSc: wideScreenSlice,
-      
-    },
-    middleware: (getDefaultMiddleware) =>
-      getDefaultMiddleware().concat(ApiSlice.middleware),
-   // devTools: process.env.NODE_ENV !== 'production',
-   
-  });
+  reducer: {
+    [TRSlice.reducerPath]: TRSlice.reducer,
+    [USAApiSlice.reducerPath]: USAApiSlice.reducer,
+    [FRSlice.reducerPath]: FRSlice.reducer,
+
+    WideSc: wideScreenSlice,
+    slcCountry:selectSlice
+
+  },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(TRSlice.middleware, USAApiSlice.middleware,FRSlice.middleware),
+});
