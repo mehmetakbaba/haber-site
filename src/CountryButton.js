@@ -6,7 +6,7 @@ import { setSelectCountry, getSelectCountry } from './slice/SelectSlice';
 function CountryButton({tr,usa,fr}) {
     const dispatch = useDispatch();
     const country = useSelector(getSelectCountry);
-    const countryName = country === "tr-TR" ? "Türkiye" : "USA";
+    const countryName = country === "tr-TR" ? "Türkiye" : country === "en-US" ? "USA": "France";
     return ( 
       
         <DropdownButton id="dropdown-item-button" title={countryName}>

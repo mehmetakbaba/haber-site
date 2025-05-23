@@ -94,6 +94,15 @@ p{
 
 
 @media only screen and (max-width: 768px) {
+  .css-2soe65-MuiModal-root-MuiDrawer-root {
+  position: relative !important;
+  z-index: 1300;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  z-index: 1200;
+}
   p{
     color: black;
   }
@@ -115,6 +124,30 @@ p{
     padding: 8px;
     margin: 5px 0;
   }
+  html, body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; 
+  width: 100%;
+}
+#dropdown-item-button,.dropdown-item:hover{
+background: transparent;
+color: black;
+border-color: transparent;
+font-weight: bold;
+}
+
+.dropdown-menu ,.dropdown-item:active{
+  background: #F4F1DE;
+  color: black;
+  border-color: transparent;
+  font-weight: bold;
+  
+}
+.css-s0r7el{
+  background: transparent;
+}
+
 }
 
 .skeleton-flex{
@@ -147,4 +180,7 @@ font-weight: bold;
   border-color: transparent;
   font-weight: bold;
   
+}
+.css-s0r7el{
+  background: transparent;
 }

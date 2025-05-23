@@ -1,5 +1,5 @@
 import './App.css';
-import React, { use, useEffect, useRef, useState } from 'react';
+import  { useEffect, useRef, useState } from 'react';
 import { General, Finance,Sport, Divider } from './imports';
 import { Button } from '@mui/material';
 import { languages } from "./languages";
@@ -31,7 +31,7 @@ const {general, sport, finance, header, dropdown} = languages[stateLangue];
       });
     }
   };
-  console.log('data', data);
+  
 
   useEffect(() => {
     const handleResize = () => {
@@ -117,34 +117,62 @@ const {general, sport, finance, header, dropdown} = languages[stateLangue];
  
 }}>
   <div style={{
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    padding: '0 10px'
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'space-between',
+  padding: '0 10px',
+  position: 'relative',
+}}>
+
+  <div style={{ width: '33.33%' }}></div>
+
+ 
+  <h1 style={{ 
+    fontSize: '1.5rem', 
+    margin: 0, 
+    textAlign: 'center', 
+    width: '33.33%' 
   }}>
-    <h1 style={{ fontSize: '1.5rem', margin: 0 }}>News Sway</h1>
-    <h4 style={{ margin: 0, fontSize: '0.8rem' }}>newsswayinfo@gmail.com</h4>
-  </div>
+    News Sway
+  </h1>
+
+
+  <h4 style={{ 
+    margin: 0, 
+    fontSize: '0.8rem', 
+    textAlign: 'right', 
+    width: '33.33%' 
+  }}>
+    newsswayinfo@gmail.com
+  </h4>
+</div>
+
   
   <div className='button-div' style={{
     display: 'flex',
-    overflowX: 'auto',
+   
+  
     height:'100%',
     gap: '10px',
     whiteSpace: 'nowrap',
     scrollbarWidth: 'none' 
   }}>
-    <Button onClick={() => scrollToDivider(section1Ref)} disableRipple style={{ minWidth: 'unset' }}>
-      <h3 id='politikaH3' style={{ fontSize: '1rem', margin: 0 }}>{general}</h3>
-    </Button>
-    <h3 id='trHeader' style={{ fontSize: '1rem', margin: 0 }}>{header}</h3>
-    <Button onClick={() => scrollToDivider(section2Ref)} disableRipple style={{ minWidth: 'unset' }}>
-      <h3 id='finansH3' style={{ fontSize: '1rem', margin: 0 }}>Finans</h3>
-    </Button>
-    <h3 id='glHeader' style={{ fontSize: '1rem', margin: 0 }}>Dünya</h3>
-    <Button onClick={() => scrollToDivider(section3Ref)} disableRipple style={{ minWidth: 'unset' }}>
-      <h3 id='sporH3' style={{ fontSize: '1rem', margin: 0 }}>Spor</h3>
-    </Button>
+    <Button sx={{backgroundColor: 'transparent', 
+                      color: 'black',}}  onClick={() => scrollToDivider(section1Ref)} disableRipple>
+            <h3 style={{fontSize : '2rem'}} id='politikaH3'>{general}</h3>
+          </Button>
+          <Button sx={{backgroundColor: 'transparent', 
+                      color: 'black',}} onClick={() => scrollToDivider(section2Ref)} disableRipple>
+            <h3 id='finansH3'>{finance}</h3>
+          </Button>
+          <Button sx={{backgroundColor: 'transparent', 
+                      color: 'black',}} onClick={() => scrollToDivider(section3Ref)} disableRipple>
+            <h3 id='sporH3'>{sport}</h3>
+          </Button>
+          <CountryButton  {...dropdown}>
+            <h3 id='country'>{header}</h3>
+            
+          </CountryButton>
   </div>
 </header>
 
