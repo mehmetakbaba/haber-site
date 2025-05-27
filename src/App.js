@@ -141,7 +141,7 @@ const {general, sport, finance, header, dropdown} = languages[stateLangue];
     margin: 0, 
     fontSize: '0.8rem', 
     textAlign: 'right', 
-    width: '33.33%' 
+     
   }}>
     newsswayinfo@gmail.com
   </h4>
