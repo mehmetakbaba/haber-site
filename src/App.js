@@ -124,14 +124,14 @@ const {general, sport, finance, header, dropdown} = languages[stateLangue];
   position: 'relative',
 }}>
 
-  <div style={{ width: '33.33%' }}></div>
+
 
  
   <h1 style={{ 
     fontSize: '1.5rem', 
     margin: 0, 
     textAlign: 'center', 
-    width: '33.33%' 
+    
   }}>
     News Sway
   </h1>
