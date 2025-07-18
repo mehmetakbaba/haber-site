@@ -3,16 +3,16 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 export const USAApiSlice = createApi({
   reducerPath: 'usaApi', 
   baseQuery: fetchBaseQuery({
-    baseUrl: 'https://db8yrbzr13.execute-api.eu-north-1.amazonaws.com/api',
+    baseUrl: 'https://4yql9tv0fa.execute-api.eu-north-1.amazonaws.com/api',
   }),
-  tagTypes: ['USNews'],
+  tagTypes: ['USAFunc'],
   endpoints: (builder) => ({
     getUSANews: builder.query({
-      query: () => 'USNews',
+      query: () => 'USAFunc',
       providesTags: (result) =>
         result
-          ? [...Object.keys(result).map((key) => ({ type: 'USNews', id: key })), { type: 'USNews', id: 'LIST' }]
-          : [{ type: 'USNews', id: 'LIST' }],
+          ? [...Object.keys(result).map((key) => ({ type: 'USAFunc', id: key })), { type: 'USAFunc', id: 'LIST' }]
+          : [{ type: 'USAFunc', id: 'LIST' }],
     }),
   }),
 });

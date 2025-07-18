@@ -4,7 +4,7 @@ try {
   const generator = SitemapGenerator('https://newssway.com', {
     stripQuerystring: false,
     filepath: './public/sitemap.xml', 
-    maxDepth: 0,
+    maxDepth: 10,
   });
 
   generator.on('done', () => {

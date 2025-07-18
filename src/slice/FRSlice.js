@@ -3,16 +3,16 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 export const FRSlice = createApi({
   reducerPath: 'frApi',
   baseQuery: fetchBaseQuery({
-    baseUrl: 'https://db8yrbzr13.execute-api.eu-north-1.amazonaws.com/api',
+    baseUrl: 'https://4yql9tv0fa.execute-api.eu-north-1.amazonaws.com/api',
   }),
-  tagTypes: ['FRNews'],
+  tagTypes: ['FRFunc'],
   endpoints: (builder) => ({
     getFRNews: builder.query({
-      query: () => 'FRNews',
+      query: () => 'FRFunc',
       providesTags: (result) =>
         result
-          ? [...Object.keys(result).map((key) => ({ type: 'FRNews', id: key })), { type: 'FRNews', id: 'LIST' }]
-          : [{ type: 'FRNews', id: 'LIST' }],
+          ? [...Object.keys(result).map((key) => ({ type: 'FRFunc', id: key })), { type: 'FRFunc', id: 'LIST' }]
+          : [{ type: 'FRFunc', id: 'LIST' }],
     }),
   }),
 });
